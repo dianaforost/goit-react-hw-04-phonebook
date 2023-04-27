@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import Section from './Section/Section';
+import SectionFirst from './Section/SectionFirst';
+import SectionSec from './Section/SectionSec'
 import PhoneBook from './PhoneBook/PhoneBook';
 import Contacts from './Contacts/Contacts';
 import Filter from './Filter/Filter';
@@ -60,10 +61,10 @@ const onDeleteContact = id =>{
               padding:'10px 0px'
             }}
           >
-      <Section title="Phonebook">
+      <SectionFirst title="My Phonebook" href='../icons/symbol-defs.svg#icon-profile'>
         <PhoneBook onSubmitForm={onSubmitForm}/>
-      </Section>
-      <Section title="Contacts">
+      </SectionFirst>
+      <SectionSec title="Contacts">
         {contacts.length > 1 && (
           <Filter value={filter} onChange={onChange}/>
           )}
@@ -72,7 +73,7 @@ const onDeleteContact = id =>{
             ) : (
               <p>Your phonebook is empty.Please add a new contact.</p>
               )}
-            </Section>
+            </SectionSec>
       </div>
       );
     }
